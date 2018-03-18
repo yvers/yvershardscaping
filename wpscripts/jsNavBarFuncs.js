@@ -37,7 +37,7 @@ function WpNavBar()
 WpNavBar.mergeOptions = function (obj1, obj2) {
   for (var p in obj2) {
 	if (obj2.hasOwnProperty(p)) {
- 
+
 	    try {
 	      if( obj2[p].constructor==Object ) {
 	      	if( obj1[p]===undefined )
@@ -71,7 +71,7 @@ WpNavBar.formatFlashParams = function( flashOptions ) {
 	    		{
 					if( sParams!=='' )
 					{	sParams += '&'; }
-					sParams += p + index.toString() + '=' + flashOptions[p][index];		
+					sParams += p + index.toString() + '=' + flashOptions[p][index];
 	    		}
 	    	}
 	    	else
@@ -87,21 +87,21 @@ WpNavBar.formatFlashParams = function( flashOptions ) {
 
 WpNavBar.readTree = function ( navtree )
 {
-	try 
+	try
 	{
 		WpNavBar.addLinks(navtree, navtree);
 	} catch(err)
 	{
-		navtree = null; 
+		navtree = null;
 	}
 	return navtree;
 };
 
-WpNavBar.getErrorObj = function (msg) 
+WpNavBar.getErrorObj = function (msg)
 {
 	var err = new Error(msg);
 	// take care of IE5/5.5
-	if (!err.message) 
+	if (!err.message)
 	{
 		err.message = msg;
 	}
@@ -114,14 +114,14 @@ WpNavBar.getRelPath = function(sFromWebPath, sToWebPath)
 	{	return sToWebPath;}
 	var leftDirsArray = sFromWebPath.split( "/" );
 	var rightDirsArray = sToWebPath.split( "/" );
-	
+
 	var i = 0;
 	for( ; i < leftDirsArray.length-1 && i < rightDirsArray.length-1; i++ )
 	{
 		if( leftDirsArray[i] != rightDirsArray[i] )
-		{	break;}	
+		{	break;}
 	}
-	
+
 	var sRel = "";
 	for( var j = i; j < leftDirsArray.length-1; j++ )
 	{
@@ -132,7 +132,7 @@ WpNavBar.getRelPath = function(sFromWebPath, sToWebPath)
 		sRel += rightDirsArray[k] + "/";
 	}
 	sRel += rightDirsArray[rightDirsArray.length-1];
-	
+
 	return sRel;
 };
 
@@ -184,7 +184,9 @@ WpNavBar.makeGenNavBarItem = function( childArray, item, options, sOverideTarget
 	newnavbaritem.bIsExternal = item.bIsExternal;
 	newnavbaritem.sTarget = item.sTarget;
 	newnavbaritem.bIsSwrFeed = item.bIsSwrFeed;
-	
+
+  console.log(options);
+
 	if( sOverideTarget !== null )
 	{	newnavbaritem.sTarget = sOverideTarget; }
 
@@ -205,7 +207,7 @@ WpNavBar.makeGenNavBarItem = function( childArray, item, options, sOverideTarget
 		else if( sUrl == '%next%' )
 		{	sUrl = options.m_sRightUrl;}
 	}
-	
+
 	var sActiveFrameUrl = null;
 	var sActiveFrameId = null;
 	if( !item.bOverrideNavBarTarget )
@@ -224,7 +226,7 @@ WpNavBar.makeGenNavBarItem = function( childArray, item, options, sOverideTarget
 	{
 		var relpathframetopage = (item.bIsWebPath === true) ? WpNavBar.getRelPath(sActiveFrameUrl, sUrl) : sUrl;
 		if( options.m_bAbsoluteLinks !== true )
-		{	sActiveFrameUrl = WpNavBar.getRelPath(options.m_sThisPageUrl,sActiveFrameUrl);} 
+		{	sActiveFrameUrl = WpNavBar.getRelPath(options.m_sThisPageUrl,sActiveFrameUrl);}
 		newnavbaritem.sUrl = sActiveFrameUrl + "?" + sActiveFrameId + "=" + relpathframetopage;
 	}
 	else
@@ -242,19 +244,19 @@ WpNavBar.makeGenNavBarItem = function( childArray, item, options, sOverideTarget
 			if( !options.m_bIncludeAnchors && childnavbaritem.bIsAnchor === true )
 			{	continue;}
 			if( !options.m_bIncludeChildren && childnavbaritem.bIsAnchor !== true )
-			{	continue;} 
+			{	continue;}
 			if( !newnavbaritem.childArray )
 			{	newnavbaritem.childArray = [];}
 			WpNavBar.makeGenNavBarItem(newnavbaritem.childArray,childnavbaritem,options,sOverideTarget);
-		}			
+		}
 	}
-	
-	var bInsert = true;	
+
+	var bInsert = true;
 	//If the item is an SWR feed, add feed items (Note: Flash navbars populate feeds internally)
 	if( item.bIsSwrFeed && !options.m_bNoScript && !options.m_bFlash )
 	{
 		var sFeedVar = "feed_" + item.sSwrUid;
-		//check whether feed loaded		
+		//check whether feed loaded
 		if (eval( 'typeof(' + sFeedVar +')' ) != "undefined")
 		{
 			var myfeed = eval( sFeedVar );
@@ -358,7 +360,7 @@ WpNavBar.getNavTreeHome = function( global_navtree, options )
 	navtree.childArray = [];
 
 	var homepage = global_navtree.childArray[0];
-	
+
 	WpNavBar.makeGenNavBarItem(navtree.childArray,homepage,options,null);
 	var homepagedest = navtree.childArray[0];
 	if( !options.m_bNamed && options.m_sHomeName )
@@ -375,7 +377,7 @@ WpNavBar.getNavTreeParentLevel = function( global_navtree, options )
 	navtree.childArray = [];
 
 	var homepage = global_navtree.childArray[0];
-	
+
 	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options );
 	var thispageparent = global_navtree;
 	if( thispagesrc && thispagesrc.parent )
@@ -383,10 +385,10 @@ WpNavBar.getNavTreeParentLevel = function( global_navtree, options )
 	var thispagegrandparent = thispageparent;
 	if( thispageparent && thispageparent.parent )
 	{	thispagegrandparent = thispageparent.parent;}
-	
+
 	if( options.m_bIncludeHome )
 	{	WpNavBar.makeGenNavBarItem(navtree.childArray, homepage, options, null );	}
-	
+
 	if( thispagegrandparent && thispagegrandparent.childArray )
 	{
 		for( var index = 0; index < thispagegrandparent.childArray.length; index++ )
@@ -410,12 +412,12 @@ WpNavBar.getNavTreeSameLevel = function( global_navtree, options )
 	navtree.childArray = [];
 
 	var homepage = global_navtree.childArray[0];
-	
+
 	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options );
 	var thispageparent = global_navtree;
 	if( thispagesrc && thispagesrc.parent )
 	{	thispageparent = thispagesrc.parent;}
-	
+
 	if( options.m_bIncludeHome )
 	{	WpNavBar.makeGenNavBarItem(navtree.childArray,homepage, options, null); }
 	if( options.m_bIncludeParent && thispageparent && thispageparent.parent )
@@ -423,7 +425,7 @@ WpNavBar.getNavTreeSameLevel = function( global_navtree, options )
 		if( !options.m_bIncludeHome || thispageparent != homepage )
 		{ 	WpNavBar.makeGenNavBarItem(navtree.childArray,thispageparent, options, null); }
 	}
-	
+
 	if( thispageparent && thispageparent.childArray )
 	{
 		for( var index = 0; index < thispageparent.childArray.length; index++ )
@@ -449,18 +451,18 @@ WpNavBar.getNavTreeChildLevel = function( global_navtree, options )
 	navtree.childArray = [];
 
 	var homepage = global_navtree.childArray[0];
-	
+
 	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options );
-	
+
 
 	if( options.m_bIncludeHome )
-	{	WpNavBar.makeGenNavBarItem(navtree.childArray, homepage, options, null ); }	
+	{	WpNavBar.makeGenNavBarItem(navtree.childArray, homepage, options, null ); }
 	if( options.m_bIncludeParent && thispagesrc && thispagesrc.parent )
 	{
 		if( !options.m_bIncludeHome || thispagesrc != homepage )
 		{	WpNavBar.makeGenNavBarItem(navtree.childArray, thispagesrc, options, null );}
 	}
-	
+
 	if( thispagesrc && thispagesrc.childArray )
 	{
 		for( var index = 0; index < thispagesrc.childArray.length; index++ )
@@ -486,7 +488,7 @@ WpNavBar.getNavTreeBreadcrumb = function( global_navtree, options )
 	var navtree = {};
 	navtree.childArray = [];
 
-	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options ); 
+	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options );
 	if( thispagesrc && options.m_bHideCurrent )
 	{
 		thispagesrc = thispagesrc.parent;
@@ -515,12 +517,12 @@ WpNavBar.getNavTreeBreadcrumb = function( global_navtree, options )
 WpNavBar.getNavTreeAnchor = function( global_navtree, options )
 {
 	options.m_bIncludeAnchors = true;
-	
+
 	var navtree = {};
 	navtree.childArray = [];
 
 	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options );
-	
+
 	if( thispagesrc && thispagesrc.childArray )
 	{
 		for( var index = 0; index < thispagesrc.childArray.length; index++ )
@@ -544,9 +546,9 @@ WpNavBar.getNavTreePrevNext = function( global_navtree, options, bIncludePrev, b
 
 	var homepage = global_navtree.childArray[0];
 	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options );
-	
-	var iDestIndex = 0; 
-	
+
+	var iDestIndex = 0;
+
 	if( options.m_bIncludeHome )
 	{
 		WpNavBar.makeGenNavBarItem(navtree.childArray, homepage, options, null );
@@ -554,7 +556,7 @@ WpNavBar.getNavTreePrevNext = function( global_navtree, options, bIncludePrev, b
 		{	navtree.childArray[iDestIndex].sTitle = options.m_sHomeName;}
 		iDestIndex++;
 	}
-	
+
 	if( thispagesrc && thispagesrc.parent )
 	{
 		var prevpage = thispagesrc.leftSibling;
@@ -572,14 +574,14 @@ WpNavBar.getNavTreePrevNext = function( global_navtree, options, bIncludePrev, b
 		if( options.m_bIncludeParent && thispagesrc.parent.parent )
 		{
 			if( !options.m_bIncludeHome || thispagesrc.parent != homepage )
-			{ 	
-				WpNavBar.makeGenNavBarItem(navtree.childArray, thispagesrc.parent, options, null); 
+			{
+				WpNavBar.makeGenNavBarItem(navtree.childArray, thispagesrc.parent, options, null);
 				if( !options.m_bNamed && options.m_sUpName !== null )
 				{	navtree.childArray[iDestIndex].sTitle = options.m_sUpName;}
 				iDestIndex++;
 			}
 		}
-	
+
 		var nextpage = thispagesrc.rightSibling;
 		if( bIncludeNext && nextpage )
 		{
@@ -592,7 +594,7 @@ WpNavBar.getNavTreePrevNext = function( global_navtree, options, bIncludePrev, b
 			}
 		}
 	}
-	
+
 	WpNavBar.makeRelLinks( navtree, options );
 	return navtree;
 };
@@ -612,7 +614,7 @@ WpNavBar.getNavTreeUp = function( global_navtree, options )
 		{	navtree.childArray[iDestIndex].sTitle = options.m_sHomeName;}
 		iDestIndex++;
 	}
-	
+
 	var thispagesrc = WpNavBar.findCurrentPage( global_navtree, options );
 	if( thispagesrc && thispagesrc.parent && thispagesrc.parent.parent )
 	{
@@ -621,7 +623,7 @@ WpNavBar.getNavTreeUp = function( global_navtree, options )
 		{	navtree.childArray[iDestIndex].sTitle = options.m_sUpName;}
 		iDestIndex++;
 	}
-	
+
 	WpNavBar.makeRelLinks( navtree, options );
 	return navtree;
 };
