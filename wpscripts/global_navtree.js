@@ -12,6 +12,18 @@ var global_navtree = WpNavBar.readTree({
     }]
 },
 {   'bSeparatorBefore':true,
+    'sTitle':'2017',
+    'bIsWebPath':true,
+    'sUrl':'2017.html',"childArray" : [
+    {   'bSeparatorAfter':true,
+        'sDescription':'Hardscaping is the hard part of a landscape created by man. Interlocking is only a part of hardscaping.',
+        'sTitle':'What does hardscaping mean?',
+        'bIsAnchor':true,
+        'bIsWebPath':true,
+        'sUrl':'2017.html#hardscaping'
+    }]
+},
+{   'bSeparatorBefore':true,
     'sTitle':'2015',
     'bIsWebPath':true,
     'sUrl':'2015.html',"childArray" : [
