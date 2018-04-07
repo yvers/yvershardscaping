@@ -1,28 +1,49 @@
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 const app = path.resolve(__dirname, 'app');
-const dist = path.resolve(__dirname, 'dist');
+const dist = path.resolve(__dirname, 'src/assets/javascripts');
 
 module.exports = {
   context: app,
   entry: {
     app: path.resolve(app, 'app.js'),
+    vendor: [
+      'react',
+      'react-dom',
+    ],
   },
   output: {
     path: dist,
-    filename: '[name].[hash].js',
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+				vendor: {
+					test: /node_modules/,
+					chunks: 'initial',
+					name: 'vendor',
+					priority: 10,
+					enforce: true
+				},
+		  },
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true,
+        uglifyOptions: {
+          compress: {
+            inline: false,
+          },
+        },
+      }),
+    ],
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.[hash].js',
-      minChunks: module => (
-        module.context && module.context.indexOf('node_modules') >= 0
-      ),
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

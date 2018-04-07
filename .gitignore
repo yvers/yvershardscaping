@@ -3,3 +3,8 @@ npm-debug.log*
 node_modules
 .tmp
 .sass-cache
+.jekyll-metadata
+dist
+public
+src/assets/javascripts/app.js
+src/assets/javascripts/vendor.js
