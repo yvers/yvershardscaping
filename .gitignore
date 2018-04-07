@@ -4,6 +4,7 @@ node_modules
 .tmp
 .sass-cache
 .jekyll-metadata
+_site
 dist
 public
 src/assets/javascripts/app.js
