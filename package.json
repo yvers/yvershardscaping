@@ -19,13 +19,11 @@
     "babel-plugin-transform-exponentiation-operator": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   },
   "dependencies": {
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "photoswipe": "^4.1.2"
   }
 }

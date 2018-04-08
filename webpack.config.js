@@ -10,8 +10,7 @@ module.exports = {
   entry: {
     app: path.resolve(app, 'app.js'),
     vendor: [
-      'react',
-      'react-dom',
+      'photoswipe',
     ],
   },
   output: {
