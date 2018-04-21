@@ -3,7 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 const app = path.resolve(__dirname, 'app');
-const dist = path.resolve(__dirname, 'src/assets/js');
+const dist = path.resolve(__dirname, 'src/assets');
 
 module.exports = {
   context: app,
