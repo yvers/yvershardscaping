@@ -4,7 +4,9 @@
   "description": "yvershardscaping",
   "scripts": {
     "build": "webpack --config webpack.config.js --progress --colors --mode production && jekyll build",
-    "start": "jekyll serve -w -o",
+    "build:dev": "webpack --config webpack.config.js --progress --colors --profile --watch --mode development",
+    "serve": "jekyll serve -w -o",
+    "start": "npm run build:dev & npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

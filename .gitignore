@@ -7,5 +7,5 @@ node_modules
 _site
 dist
 public
-src/assets/javascripts/app.js
-src/assets/javascripts/vendor.js
+src/assets/js/app.js
+src/assets/js/vendor.js
