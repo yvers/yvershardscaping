@@ -6,6 +6,3 @@ node_modules
 .jekyll-metadata
 _site
 dist
-public
-src/assets/**/app.js
-src/assets/**/vendor.js
