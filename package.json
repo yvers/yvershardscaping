@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "yvershardscaping",
   "scripts": {
-    "build": "webpack --config webpack.config.js --progress --colors --mode production && jekyll build",
+    "build": "webpack --config webpack.config.js --progress --colors --mode production && jekyll build JEKYLL_ENV=production",
     "build:dev": "webpack --config webpack.config.js --progress --colors --profile --watch --mode development",
     "serve": "jekyll serve -w -o",
     "start": "npm run build:dev & npm run serve",
