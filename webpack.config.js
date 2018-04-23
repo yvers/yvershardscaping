@@ -3,7 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 const app = path.resolve(__dirname, 'app');
-const dist = path.resolve(__dirname, 'src/assets/js');
+const dist = path.resolve(__dirname, 'src/assets/bundle');
 
 module.exports = {
   context: app,
@@ -55,6 +55,17 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|txt|xml)$/,
+        loader: 'file-loader?name=[name].[ext]',
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|ico)$/,
+        use: [
+          'file-loader?name=[name].[ext]',
+          'image-webpack-loader',
+        ],
       },
     ],
   }

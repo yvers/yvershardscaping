@@ -1,3 +1,3 @@
-const a = '123f';
+import initPhotoSwipe from './initPhotoSwipe';
 
-console.log('abcd');
+initPhotoSwipe('.my-gallery');
