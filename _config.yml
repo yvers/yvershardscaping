@@ -17,6 +17,9 @@ plugins:
 source: src
 destination: dist
 
+# Custom
+thumbnail_width: 200
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

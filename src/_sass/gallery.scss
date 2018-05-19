@@ -1,11 +1,19 @@
 .gallery {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-flow: wrap row;
+
+  @media screen and (min-width: $on-laptop) {
+    justify-content: flex-start;
+  }
 }
 
 .gallery-slide {
   flex: 0 0 auto;
+  margin: $spacing;
+
 
   &-link {
 

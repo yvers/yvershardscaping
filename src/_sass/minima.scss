@@ -21,10 +21,10 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    800px !default;
+$content-width:   840px !default;
 
 $on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-laptop:        840px !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -42,6 +42,10 @@ $on-laptop:        800px !default;
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
 }
+
+// variables
+
+$spacing: 8px;
 
 // Import partials.
 @import

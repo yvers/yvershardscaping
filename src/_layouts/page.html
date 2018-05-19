@@ -19,6 +19,9 @@ layout: default
           itemscope
         >
           {% for slide in gallery  %}
+            {% assign image_name = slide.image | split: '.' %}
+            {% assign image_meta = image_name[0] | split: '__' %}
+
             <figure
               class="gallery-slide{% if forloop.first %} gallery-slide-first{% elsif forloop.last%} gallery-slide-last{% endif %}"
               itemprop="associatedMedia"
@@ -27,13 +30,13 @@ layout: default
             >
               <a
                 class="gallery-slide-link"
-                href="/assets/img/{{ slide.image }}"
+                href="/assets/img/full/{{ slide.image }}"
                 itemprop="contentUrl"
-                data-size="{{ slide.size }}"
+                data-size="{{ image_meta[1] }}"
               >
                 <img
                   class="gallery-slide-image"
-                  src="/assets/img/{{ slide.thumbnail | default: slide.image }}"
+                  src="/assets/img/thumb/{{ image_name[0] }}-{{ site.thumbnail_width}}.{{ image_name[1] }}"
                   itemprop="thumbnail"
                   alt="{{ slide.description }}"
                 />
