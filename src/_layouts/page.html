@@ -10,19 +10,43 @@ layout: default
   <div class="post-content">
     {{ content }}
 
-    {% if page.gallery != null %}
-      <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-        {% for slides in page.gallery %}
-          {% for slide in slides  %}
-            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="/assets/img/{{ slide.image }}" itemprop="contentUrl" data-size="{{ slide.size }}">
-                  <img src="/assets/img/{{ slide.thumbnail | default: slide.image }}" itemprop="thumbnail" alt="{{ slide.description }}" />
+    {% if page.galleries != null %}
+      {% for gallery in page.galleries %}
+        <div
+          id="gallery-{{ forloop.index }}"
+          class="gallery{% if forloop.first %} gallery-first{% elsif forloop.last%} gallery-last{% endif %}"
+          itemtype="http://schema.org/ImageGallery"
+          itemscope
+        >
+          {% for slide in gallery  %}
+            <figure
+              class="gallery-slide{% if forloop.first %} gallery-slide-first{% elsif forloop.last%} gallery-slide-last{% endif %}"
+              itemprop="associatedMedia"
+              itemtype="http://schema.org/ImageObject"
+              itemscope
+            >
+              <a
+                class="gallery-slide-link"
+                href="/assets/img/{{ slide.image }}"
+                itemprop="contentUrl"
+                data-size="{{ slide.size }}"
+              >
+                <img
+                  class="gallery-slide-image"
+                  src="/assets/img/{{ slide.thumbnail | default: slide.image }}"
+                  itemprop="thumbnail"
+                  alt="{{ slide.description }}"
+                />
               </a>
-              <figcaption itemprop="caption description">{{ slide.caption }}</figcaption>
+
+              <figcaption
+                class="gallery-slide-caption"
+                itemprop="caption description"
+              >{{ slide.caption }}</figcaption>
             </figure>
           {% endfor %}
-        {% endfor %}
-      </div>
+        </div>
+      {% endfor %}
     {% endif %}
   </div>
 </article>
@@ -59,7 +83,7 @@ layout: default
           </div>
 
           <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-              <div class="pswp__share-tooltip"></div> 
+              <div class="pswp__share-tooltip"></div>
           </div>
 
           <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">

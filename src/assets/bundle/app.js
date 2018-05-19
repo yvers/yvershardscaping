@@ -143,7 +143,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _initPhotoSwipe = __webpack_require__(/*! ./initPhotoSwipe */ \"./initPhotoSwipe.js\");\n\nvar _initPhotoSwipe2 = _interopRequireDefault(_initPhotoSwipe);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _initPhotoSwipe2.default)('.my-gallery');\n\n//# sourceURL=webpack:///./app.js?");
+eval("\n\nvar _initPhotoSwipe = __webpack_require__(/*! ./initPhotoSwipe */ \"./initPhotoSwipe.js\");\n\nvar _initPhotoSwipe2 = _interopRequireDefault(_initPhotoSwipe);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _initPhotoSwipe2.default)('.gallery');\n\n//# sourceURL=webpack:///./app.js?");
 
 /***/ }),
 

@@ -1,0 +1,21 @@
+.gallery {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gallery-slide {
+  flex: 0 0 auto;
+
+  &-link {
+
+  }
+
+  &-image {
+
+  }
+
+  &-caption {
+
+  }
+}
