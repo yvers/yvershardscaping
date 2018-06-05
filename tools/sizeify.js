@@ -4,6 +4,7 @@ const path = require('path');
 const sizeOf = require('image-size');
 
 const imageSettings = require('./imageSettings');
+const checkDir = require('./checkDir');
 const readImages = require('./readImages');
 
 function getNewFilename (filename, dimensions) {
@@ -38,4 +39,6 @@ function setDimensions (originalFilename, originalFilePath) {
   });
 }
 
-readImages(imageSettings.path.images, setDimensions);
+checkDir(imageSettings.path.images, () => {
+  readImages(imageSettings.path.images, setDimensions);
+});

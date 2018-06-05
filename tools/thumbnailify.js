@@ -1,6 +1,7 @@
 const Thumbnail = require('thumbnail');
 
 const imageSettings = require('./imageSettings');
+const checkDir = require('./checkDir');
 const readImages = require('./readImages');
 
 const thumbnail = new Thumbnail(
@@ -22,4 +23,6 @@ function createThumbnail (originalFilename) {
   );
 }
 
-readImages(imageSettings.path.full, createThumbnail);
+checkDir(imageSettings.path.thumbs, () => {
+  readImages(imageSettings.path.full, createThumbnail);
+});

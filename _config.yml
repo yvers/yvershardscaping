@@ -18,7 +18,8 @@ source: src
 destination: dist
 
 # Custom
-thumbnail_width: 200
+thumbnail_width: 120
+image_separator: __
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

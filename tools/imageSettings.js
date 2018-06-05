@@ -12,6 +12,7 @@ module.exports = {
     full,
     thumbs,
   },
-  thumbWidth: 200,
+  thumbWidth: 120,
   thumbHeight: null,
+  separator: '__',
 };

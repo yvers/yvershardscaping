@@ -1,3 +1,3 @@
 import initPhotoSwipe from './initPhotoSwipe';
 
-initPhotoSwipe('.gallery');
+initPhotoSwipe('.gallery-slides');

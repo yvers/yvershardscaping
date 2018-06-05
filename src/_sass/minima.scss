@@ -55,6 +55,10 @@ $spacing: 8px;
 ;
 
 @import
+  "mixins"
+;
+
+@import
   "../../node_modules/photoswipe/src/css/main.scss",
   "../../node_modules/photoswipe/src/css/default-skin/default-skin.scss",
   "photo-swipe-overrides"

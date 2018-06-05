@@ -5,7 +5,7 @@ function isImage (filename = '') {
   return ['jpg', 'jpeg', 'png', 'gif'].indexOf(extname(filename.toLowerCase()).slice(1)) >= 0;
 }
 
-module.exports = function (path, cb) {
+module.exports = function (path, cb, all = false) {
   if (path == null || cb == null) return;
 
   console.log(`reading images from: ${path}`);
@@ -15,7 +15,11 @@ module.exports = function (path, cb) {
 
     const images = files.filter(isImage);
 
-    images.forEach((filename) => cb(filename, path));
+    if (all) {
+      cb(images);
+    } else {
+      images.forEach((filename) => cb(filename, path));
+    }
 
     console.log(`\nprocessing ${images.length} image(s)\n`);
   });

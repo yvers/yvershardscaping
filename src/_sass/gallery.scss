@@ -1,22 +1,40 @@
 .gallery {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  align-items: flex-end;
-  flex-flow: wrap row;
+  @include clearfix;
 
-  @media screen and (min-width: $on-laptop) {
-    justify-content: flex-start;
+  margin-left: -$spacing / 2;
+  margin-right: -$spacing / 2;
+
+  &-header {
+    padding: 0 $spacing;
+  }
+
+  & + .gallery {
+    margin-top: $spacing * 5;
   }
 }
 
 .gallery-slide {
-  flex: 0 0 auto;
   margin: $spacing;
+  float: left;
+  clear: right;
 
+  &-first {
+    @media screen and (min-width: $on-palm) {
+      max-width: 500px;
+    }
+  }
 
   &-link {
+    display: block;
 
+    &-thumb {
+      display: none;
+      width: 120px;
+
+      @media screen and (min-width: $on-palm) {
+        display: block;
+      }
+    }
   }
 
   &-image {

@@ -15,39 +15,53 @@ layout: default
         <div
           id="gallery-{{ forloop.index }}"
           class="gallery{% if forloop.first %} gallery-first{% elsif forloop.last%} gallery-last{% endif %}"
-          itemtype="http://schema.org/ImageGallery"
-          itemscope
         >
-          {% for slide in gallery  %}
-            {% assign image_name = slide.image | split: '.' %}
-            {% assign image_meta = image_name[0] | split: '__' %}
+          <header class="gallery-header">
+            {% if gallery.title %}
+              <h3 class="gallery-title">{{ gallery.title }}</h3>
+            {% endif %}
 
-            <figure
-              class="gallery-slide{% if forloop.first %} gallery-slide-first{% elsif forloop.last%} gallery-slide-last{% endif %}"
-              itemprop="associatedMedia"
-              itemtype="http://schema.org/ImageObject"
-              itemscope
-            >
-              <a
-                class="gallery-slide-link"
-                href="/assets/img/full/{{ slide.image }}"
-                itemprop="contentUrl"
-                data-size="{{ image_meta[1] }}"
+            {% if gallery.description %}
+              <p class="gallery-description">{{ gallery.description }}</p>
+            {% endif %}
+          </header>
+
+          <div
+            class="gallery-slides"
+            itemtype="http://schema.org/ImageGallery"
+            itemscope
+          >
+            {% for slide in gallery.slides  %}
+              {% assign image_name = slide.i | split: '.' %}
+              {% assign image_meta = image_name[0] | split: site.image_separator %}
+
+              <figure
+                class="gallery-slide{% if forloop.first %} gallery-slide-first{% elsif forloop.last%} gallery-slide-last{% endif %}"
+                itemprop="associatedMedia"
+                itemtype="http://schema.org/ImageObject"
+                itemscope
               >
-                <img
-                  class="gallery-slide-image"
-                  src="/assets/img/thumb/{{ image_name[0] }}-{{ site.thumbnail_width}}.{{ image_name[1] }}"
-                  itemprop="thumbnail"
-                  alt="{{ slide.description }}"
-                />
-              </a>
+                <a
+                  class="gallery-slide-link{% if forloop.first == false %} gallery-slide-link-thumb{% endif %}"
+                  href="/assets/img/full/{{ slide.i }}"
+                  itemprop="contentUrl"
+                  data-size="{{ image_meta[1] }}"
+                >
+                  <img
+                    class="gallery-slide-image"
+                    src="{% if forloop.first %}/assets/img/full/{{ slide.i }}{% else %}/assets/img/thumb/{{ image_name[0] }}-{{ site.thumbnail_width}}.{{ image_name[1] }}{% endif %}"
+                    itemprop="thumbnail"
+                    alt="{{ slide.description }}"
+                  />
+                </a>
 
-              <!-- <figcaption
-                class="gallery-slide-caption"
-                itemprop="caption description"
-              >{{ slide.caption }}</figcaption> -->
-            </figure>
-          {% endfor %}
+                <!-- <figcaption
+                  class="gallery-slide-caption"
+                  itemprop="caption description"
+                >{{ slide.caption }}</figcaption> -->
+              </figure>
+            {% endfor %}
+          </div>
         </div>
       {% endfor %}
     {% endif %}
