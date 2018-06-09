@@ -1,6 +1,7 @@
 .site-header {
   border-bottom: 0;
   min-height: 0;
+  background-color: #fff;
 
   // .wrapper {
   //   max-width: none;
@@ -10,6 +11,7 @@
   @media screen and (max-width: $on-laptop) {
     position: sticky;
     top: 0;
+    z-index: 1000;
     border-bottom: 1px solid $light-grey;
   }
 
