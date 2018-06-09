@@ -9,6 +9,10 @@ url: "https://yvershardscaping.com"
 lang: en_CA
 google_analytics: UA-117997684-1
 
+# Info
+georgetown_phone: (416) 606 7337
+guelph_phone: (519) 731 5273
+
 # Build settings
 markdown: kramdown
 theme: minima
@@ -19,6 +23,7 @@ destination: dist
 
 # Custom
 thumbnail_width: 120
+thumbnail_height: 90
 image_separator: __
 
 # Exclude from processing.

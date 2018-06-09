@@ -1,6 +1,4 @@
 .gallery {
-  @include clearfix;
-
   margin-left: -$spacing / 2;
   margin-right: -$spacing / 2;
 
@@ -11,6 +9,10 @@
   & + .gallery {
     margin-top: $spacing * 5;
   }
+}
+
+.gallery-slides {
+  @include clearfix;
 }
 
 .gallery-slide {
@@ -29,7 +31,6 @@
 
     &-thumb {
       display: none;
-      width: 120px;
 
       @media screen and (min-width: $on-palm) {
         display: block;

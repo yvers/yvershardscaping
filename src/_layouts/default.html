@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="{% if page.url == '/' %}home{% else %}{{page.title | downcase | replace:' ','-' | replace:'&','and'}}{% endif %}">
 
     {% include header.html %}
 

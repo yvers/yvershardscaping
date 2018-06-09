@@ -1,0 +1,72 @@
+body {
+  background-color: #dfe3e8;
+  color: $dark-grey;
+}
+
+p + h1,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6 {
+  margin-top: $spacing * 4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  margin-bottom: $spacing * 2;
+  // display: inline-block;
+
+  // &:before {
+  //   content: "";
+  //   display: block;
+  //   height: 2px;
+  //   width: 100%;
+  //   background-color: $dark-green; //currentColor;
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: -($spacing * 2);
+  // }
+
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   height: 2px;
+  //   width: 100%;
+  //   background-color: $dark-green; //currentColor;
+  //   position: relative;
+  //   left: 0;
+  // }
+}
+
+a {
+  color: $dark-green !important;
+}
+
+blockquote {
+  color: #000;
+  border-color: $dark-green;
+  padding: ($spacing * 2) ($spacing * 3);
+  font-size: 1.15em;
+  letter-spacing: 0.05px;
+}
+
+.site-footer {
+  a {
+    color: $green !important;
+  }
+}
+
+.site-footer {
+  p {
+    color: $light-grey;
+  }
+}
+
+.site-header,
+.page-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+}

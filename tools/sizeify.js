@@ -39,6 +39,6 @@ function setDimensions (originalFilename, originalFilePath) {
   });
 }
 
-checkDir(imageSettings.path.images, () => {
+checkDir(imageSettings.path.full, () => {
   readImages(imageSettings.path.images, setDimensions);
 });

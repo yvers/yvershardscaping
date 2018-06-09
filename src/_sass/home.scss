@@ -1,0 +1,51 @@
+body.home {
+  .page-content {
+    padding-top: 0;
+    overflow: hidden;
+  }
+
+  .home-banner {
+    @media screen and (max-width: $on-laptop) {
+      margin-left: -$spacing * 2;
+      margin-right: -$spacing * 2;
+    }
+  }
+
+  .home-title {
+    text-align: center;
+  }
+
+  .banner {
+    position: relative;
+    padding: ($spacing * 3) $spacing;
+    margin: ($spacing * 6) 0;
+    text-align: center;
+
+    & > * {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      &:before, &:after {
+        display: none;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 200vw;
+      height: 100%;
+      background: $dark-green;
+      left: -100vw;
+      right: 100vw;
+      top: 0;
+    }
+  }
+}
