@@ -29,6 +29,8 @@ An important and permanent part of a hardscape is formed by interlocking stone p
   It's the first thing home buyers see as soon as they step out of the car
 </blockquote>
 
+![](/assets/img/f92690dc79db.jpg)
+
 Interlocking driveways are very weight resistant, if the base is prepared correctly and the proper pavers are chosen.
 
 Interlocking stones are much more durable than asphalt and do not chip or crack like concrete.
@@ -40,6 +42,8 @@ The distinctive driveway adds value and visual appeal to any property.
 <blockquote>
   Property looks beautiful when its patio is
 </blockquote>
+
+![](/assets/img/wpbbff03df_05_06.jpg)
 
 How about a small heaven in your backyard? Or a cozy interlock patio?
 
@@ -53,6 +57,8 @@ and design options.
   Finally, we have got the entrance we have always dreamed of. Why did we wait so long to get it done?”
 </blockquote>
 
+![](/assets/img/11-p1040539.jpg)
+
 Front Entrance - this well-designed and solidly build small piece of art catches pedestrians’ eyes like a shiny diamond in a ring.  Its wide and comfortable steps welcome you home every day when you are coming back  from work and for less then a second the same thought comes to your mind - “they do a good job.”
 
 ## [Walls & Steps](/walls-and-steps)
@@ -60,6 +66,8 @@ Front Entrance - this well-designed and solidly build small piece of art catches
 <blockquote>
   We build perfectly convenient steps, long-lasting retaining walls and other vertical dimensions
 </blockquote>
+
+![](/assets/img/wp51ac9671_05_06.jpg)
 
 The most challenging task even for professional hardscapers is to build solid walls and steps.
 

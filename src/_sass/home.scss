@@ -2,9 +2,22 @@ body.home {
   .page-content {
     padding-top: 0;
     overflow: hidden;
+
+    @media screen and (min-width: $on-laptop) {
+      img {
+        // float: left;
+        // margin-right: $spacing * 2;
+        // margin-bottom: $spacing * 2;
+        max-width: 50%;
+      }
+    }
   }
 
   .home-banner {
+    img {
+      max-width: 100%;
+    }
+
     @media screen and (max-width: $on-laptop) {
       margin-left: -$spacing * 2;
       margin-right: -$spacing * 2;
