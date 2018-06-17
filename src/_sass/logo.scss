@@ -1,0 +1,27 @@
+.yvers-logo {
+  display: block;
+  max-width: 183px;
+  font-size: 20px;
+
+  &-top-fragment,
+  &-bottom-fragment {
+    display: block;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  &-top-fragment {
+    font-weight: 800;
+  }
+
+  &-bottom-fragment {
+    font-family: 'Abril Fatface', cursive;
+    background-color: $dark-green;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 8px 16px;
+  }
+}

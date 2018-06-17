@@ -51,13 +51,28 @@ blockquote {
   letter-spacing: 0.05px;
 }
 
-.site-footer {
-  a {
-    color: $green !important;
+.pre-footer {
+  background: #fff;
+  border-top: 1px solid $dark-grey;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacing * 4;
+    padding-bottom: $spacing * 4;
+
+    @media screen and (max-width: $on-palm) {
+      flex-wrap: wrap;
+    }
   }
 }
 
 .site-footer {
+  a {
+    color: $green !important;
+  }
+
   p {
     color: $light-grey;
   }
@@ -72,4 +87,48 @@ blockquote {
 
 .page-content {
   overflow: hidden;
+}
+
+.about-criteria {
+  background: $dark-green;
+  color: #fff;
+  padding: $spacing * 2;
+  text-shadow: 1px 1px 2px rgba(70, 70, 70, 0.7);
+
+  & + .about-criteria {
+    margin-top: $spacing;
+  }
+
+  &.grey {
+    background: $grey;
+  }
+
+  &.orange {
+    background: $orange;
+  }
+
+  &.blue {
+    background: $blue;
+  }
+}
+
+.label {
+  display: inline-block;
+  width: 100px;
+}
+
+.contact-card {
+  background: #f9f9f9;
+  padding: $spacing * 2;
+  box-shadow: 0 3px $spacing 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: $spacing * 4;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li + li {
+    margin-top: $spacing;
+  }
 }

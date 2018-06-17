@@ -2,6 +2,7 @@
 layout: page
 title: Pathways
 permalink: /pathways/
+order: 5
 
 galleries:
   -

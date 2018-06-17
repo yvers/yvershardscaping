@@ -2,6 +2,7 @@
 layout: page
 title: Driveways
 permalink: /driveways/
+order: 2
 
 galleries:
    -
@@ -95,3 +96,7 @@ galleries:
     - i: f8df8c6d74be__725x461.jpg
     - i: 22fc5d542fc0__767x422.jpg
 ---
+
+A driveway is the most publicly-visible element of a property.
+
+Our driveways stand out as show-pieces of our quality workmanship and our design ability. We are proud of each and every one.

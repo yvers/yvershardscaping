@@ -2,6 +2,7 @@
 layout: page
 title: Walls & Steps
 permalink: /walls-and-steps/
+order: 6
 
 galleries:
   -

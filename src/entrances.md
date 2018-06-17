@@ -2,6 +2,7 @@
 layout: page
 title: Entrances
 permalink: /entrances/
+order: 4
 
 galleries:
   -

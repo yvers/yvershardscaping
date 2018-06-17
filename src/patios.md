@@ -2,6 +2,7 @@
 layout: page
 title: Patios
 permalink: /patios/
+order: 3
 
 galleries:
   -
@@ -83,3 +84,7 @@ galleries:
     slides:
     - i: ff614a73e7f4__670x461.jpg
 ---
+
+Patios are becoming an extension of the home.
+
+Interlocking patios create a cozy living area which is enjoyable for the whole family and guests. It’s a place where people can get together to cook, relax and have fun.
