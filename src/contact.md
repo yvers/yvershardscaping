@@ -29,6 +29,10 @@ Over <strong>2,000 jobs</strong> have been successfully completed by Yurek and h
 
 Yurek Vers ensures that every quality project that we create meets the following
 
+## We are fully equipped
+
+<img src="/assets/img/wpbe35f0c4_06.png" alt="Full equipment including truck, tools, excavator, bobcat skid-steer">
+
 ## Four criteria met on every project:
 
 <section class="about-criteria grey" markdown="1">
